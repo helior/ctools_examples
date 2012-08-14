@@ -1,0 +1,5 @@
+name = CTools Examples: Dropdown/Dropbutton
+description = Example code to build CTools Dropdown and Dropbuttons
+core = 7.x
+
+dependencies[] = ctools_examples

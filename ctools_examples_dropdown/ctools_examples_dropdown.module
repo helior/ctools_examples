@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function ctools_examples_dropdown_menu() {
+  $items['ctools_examples/dropdown'] = array(
+    'title' => 'CTools Examples: dropdown',
+    'description' => 'blah blah',
+    'page callback' => 'ctools_examples_dropdown_page',
+    'access callback' => TRUE,
+  );
+
+  $items['ctools_examples/dropbutton'] = array(
+    'title' => 'CTools Examples: dropbutton',
+    'description' => 'blah blah blah',
+    'page callback' => 'ctools_examples_dropbutton_page',
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback for ctools dropdown.
+ * @see theme_ctools_dropdown().
+ * @see theme_links().
+ */
+function ctools_examples_dropdown_page() {
+  $links = array(
+    array(
+      'title' => 'First',
+      'href' => '<front>',
+    ),
+    array(
+      'title' => 'Second',
+      'href' => '<front>',
+    ),
+    array(
+      'title' => 'Third',
+      'href' => '<front>',
+    ),
+  );
+
+  // These are CTools Dropdown variables.
+  $variables = array(
+    'title' => 'Link me!',
+    'links' => $links,
+    'image' => FALSE,
+    'class' => array('test-class'),
+  );
+
+  return theme('ctools_dropdown', $variables);
+}
+
+/**
+ * Page callback for ctools dropdown.
+ * @see theme_links__ctools_dropbutton().
+ * @see theme_links().
+ */
+function ctools_examples_dropbutton_page() {
+  $links = array(
+    array(
+      'title' => 'First',
+      'href' => '<front>',
+    ),
+    array(
+      'title' => 'Second',
+      'href' => '<front>',
+    ),
+    array(
+      'title' => 'Third',
+      'href' => '<front>',
+    ),
+  );
+
+  // These are CTools Dropdown variables.
+  $variables = array(
+  'title' => 'Link me!',
+    'links' => $links,
+    // 'image' => FALSE,
+    // 'class' => array('test-class'),
+
+    // 'title' => ctools_image_path('unicorn.gif', 'ctools_examples'),
+    // 'image' => TRUE,
+  );
+
+  return theme('links__ctools_dropbutton', $variables);
+}

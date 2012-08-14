@@ -1,0 +1,5 @@
+name = Ctools Examples
+description = CTools example code for developers.
+core = 7.x
+
+dependencies[] = ctools

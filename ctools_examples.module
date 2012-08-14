@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function ctools_examples_menu() {
+  $items['ctools_examples'] = array(
+    'title' => 'Ctools Examples',
+    'description' => 'A library of CTools example code for developers.',
+    'position' => 'left',
+    'weight' => -20,
+    'page callback' => 'system_admin_menu_block_page',
+    'access callback' => TRUE,
+    'file path' => drupal_get_path('module', 'system'),
+    'file' => 'system.admin.inc',
+  );
+
+  return $items;
+}
+
